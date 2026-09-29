@@ -1,0 +1,338 @@
+/* EGE v2 — struktur faylına uyğun yeni bölmələr */
+:root{--e-red:#c8102e;--e-ink:#1f2933;--e-soft:#eef0f3;--e-line:#dfe3e8}
+html{scroll-behavior:smooth}section[id]{scroll-margin-top:24px}
+/* Başlıq: loqo daim canlı */
+.header .nav-cta{display:none}
+.header nav{gap:clamp(12px,1.8vw,26px);font-size:.84rem;flex-wrap:nowrap}
+.header nav a{white-space:nowrap}
+.brand{display:block}.brand img{display:block;height:78px;width:auto;margin-block:-6px}
+/* Hero */
+.hero-full{position:relative;min-height:min(86svh,780px);display:flex;align-items:flex-end;overflow:hidden;background:#0b1622;color:#fff;margin-top:10px}
+.hero-media,.hero-slides,.hero-slides img,.hero-shade{position:absolute;inset:0;width:100%;height:100%}
+.hero-slides img{object-fit:cover}
+.hero-slides img{opacity:0;animation:heroFade 28s infinite;transform:scale(1.02)}
+.hero-slides img:nth-child(2){animation-delay:7s}.hero-slides img:nth-child(3){animation-delay:14s}.hero-slides img:nth-child(4){animation-delay:21s}
+@keyframes heroFade{0%{opacity:0;transform:scale(1.02)}4%{opacity:1}25%{opacity:1}30%{opacity:0;transform:scale(1.12)}100%{opacity:0;transform:scale(1.12)}}
+.hero-shade{background:linear-gradient(180deg,rgba(8,16,26,.35) 0%,rgba(8,16,26,.15) 35%,rgba(8,16,26,.82) 100%),linear-gradient(90deg,rgba(8,16,26,.55),transparent 65%)}
+.hero-full .hero-copy{position:relative;z-index:2;padding-block:clamp(48px,9vw,110px)}
+.hero-full .eyebrow{color:#ffd3da;margin-bottom:20px}.hero-full .eyebrow span{background:var(--e-red)}
+.hero-full h1{font-size:clamp(2.8rem,7.4vw,6.4rem);line-height:1.02;letter-spacing:-.05em;font-weight:700;margin:0 0 22px;color:#fff;max-width:11ch}
+.hero-full h1 em{font-style:normal;color:#ff5a72}
+.hero-sub{font-size:clamp(1.05rem,1.9vw,1.5rem);line-height:1.5;max-width:30ch;color:#e8eef5;margin:0}
+/* Ortaq başlıq */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:36px}
+.sec-head h2{margin:0}
+.sec-head .eyebrow{margin-bottom:16px}
+.home-about .ha-body{max-width:900px;color:#4b5563;line-height:1.9;font-size:1.02rem}
+.home-about .ha-body p{margin:0 0 20px}
+.wi-lead{max-width:860px;color:#4b5563;line-height:1.9;font-size:1.05rem;margin:0 0 30px}
+.faq-body{padding:0 44px 24px 0;color:#4b5563;line-height:1.85;font-size:.95rem}
+.faq-body p{margin:0 0 10px}.faq-body ul{margin:8px 0 12px 20px;padding:0}.faq-body li{margin:4px 0}
+.faq-list details{border-bottom:1px solid var(--e-line)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:16px;padding:22px 0;font-weight:650;font-size:1rem}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list .expand{margin-left:auto;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--e-soft);transition:transform .3s}
+.faq-list details[open] .expand{transform:rotate(45deg);background:var(--e-red);color:#fff}
+.faq-no{font-size:.72rem;color:#8a94a0}
+/* Xidmətlər — şəkilli kartlar */
+.svc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.svc-card{grid-column:span 2;position:relative;display:block;aspect-ratio:4/3;border-radius:22px;overflow:hidden;color:#fff;background:#0b1622}
+.svc-card:nth-child(n+4){grid-column:span 3;aspect-ratio:16/8}
+.svc-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.22,.8,.25,1)}
+.svc-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(8,16,26,.85))}
+.svc-card:hover img{transform:scale(1.07)}
+.svc-name{position:absolute;z-index:2;left:24px;right:20px;bottom:20px;display:flex;justify-content:space-between;align-items:center;font-size:clamp(1.15rem,1.9vw,1.55rem);font-weight:700;letter-spacing:-.02em}
+.svc-name i{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);transition:background .3s}
+.svc-card:hover .svc-name i{background:var(--e-red)}
+/* Xidmət daxili səhifə */
+.svc-hero{width:100%;max-height:460px;object-fit:cover;border-radius:24px;margin-bottom:34px;display:block}
+.svc-body{max-width:820px;padding-bottom:70px}
+.detail-layout.one{grid-template-columns:1fr}
+/* Həkimlər */
+.dr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.dr-card{display:block;text-align:center;transition:transform .35s}
+a.dr-card:hover{transform:translateY(-6px)}
+.dr-photo{aspect-ratio:4/4.6;border-radius:24px;overflow:hidden;background:var(--e-soft);margin-bottom:18px}
+.dr-photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+.dr-photo svg{width:100%;height:100%;fill:#c7ced6;padding-top:14%}
+.dr-card h3{margin:0 0 6px;font-size:1.2rem}.dr-card p{margin:0;color:var(--e-red);font-weight:650;font-size:.92rem}
+/* Pasiyent rəyləri */
+.rv-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}.rv-grid .rv-card{flex:1 1 calc(33.333% - 20px);max-width:calc(33.333% - 13px);min-width:280px}
+.rv-card{margin:0;padding:28px;border-radius:22px;background:var(--e-soft);display:flex;flex-direction:column}
+.rv-stars{color:#f5a623;letter-spacing:.15em;font-size:1.15rem;margin-bottom:14px}
+.rv-card blockquote{margin:0 0 22px;line-height:1.8;font-size:.95rem;color:#3b4550}
+.rv-card figcaption{margin-top:auto;display:flex;align-items:center;gap:12px;font-weight:700;font-size:.88rem}
+.rv-av{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#fff;color:var(--e-red);font-weight:750}
+/* Əlaqə */
+.ct{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(30px,6vw,80px);align-items:stretch}
+.ct h2{margin-bottom:26px}
+.ct-rows{list-style:none;padding:0;margin:0 0 30px}
+.ct-rows li{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--e-line)}
+.ct-rows small{display:block;color:#8a94a0;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.ct-rows p{margin:0;line-height:1.7;font-weight:600}.ct-rows a:hover{color:var(--e-red)}
+.ct-ic{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--e-soft);color:var(--e-red)}
+.ct-map{position:relative;min-height:340px;border-radius:26px;overflow:hidden;background:#e8edf2;background-image:linear-gradient(#fff 2px,transparent 2px),linear-gradient(90deg,#fff 2px,transparent 2px),linear-gradient(#d7dee6 1px,transparent 1px),linear-gradient(90deg,#d7dee6 1px,transparent 1px);background-size:120px 120px,120px 120px,30px 30px,30px 30px;display:grid;place-items:center}
+.ct-pin{display:grid;place-items:center;width:64px;height:64px;border-radius:50% 50% 50% 0;transform:rotate(-45deg) translateY(-40px);background:var(--e-red);color:#fff;box-shadow:0 12px 24px rgba(200,16,46,.35);animation:pinBob 2.2s ease-in-out infinite}
+.ct-pin svg{transform:rotate(45deg);width:30px;height:30px}
+@keyframes pinBob{50%{transform:rotate(-45deg) translateY(-50px)}}
+.ct-map-card{position:absolute;left:18px;right:18px;bottom:18px;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 8px 30px rgba(20,30,45,.12);display:flex;flex-direction:column;gap:4px}
+.ct-map-card small{color:#6b7480;line-height:1.5}.ct-map-card em{font-style:normal;color:var(--e-red);font-weight:700;font-size:.85rem;display:flex;align-items:center;gap:6px;margin-top:4px}
+/* Alt hissə — tam bir rəng */
+footer#footer{background:var(--e-soft);margin-top:40px}
+footer#footer .footer-main{display:grid;grid-template-columns:1.2fr .9fr 1.3fr;gap:40px;padding-block:54px 34px}
+footer#footer .footer-bottom{box-shadow:none;border-top:1px solid #d5dae0;background:transparent;padding-block:22px}
+.footer-brand img{display:block;width:210px;height:auto}
+footer#footer h3{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#6b7480;margin:0 0 16px}
+footer#footer .footer-main>div>a:not(.footer-brand){display:block;color:var(--e-ink);font-size:.9rem;margin-bottom:11px}
+.social{display:flex;gap:10px;margin-top:22px}
+.social a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#fff;color:var(--e-ink);transition:background .25s,color .25s,transform .25s}
+.social a:hover{background:var(--e-red);color:#fff;transform:translateY(-3px)}
+.social .ui-icon{width:19px;height:19px}
+@media(max-width:1000px){.header nav{font-size:.8rem}.rv-grid .rv-card{max-width:calc(50% - 10px);flex-basis:calc(50% - 20px)}}
+@media(max-width:850px){.svc-grid{grid-template-columns:1fr 1fr}.svc-card,.svc-card:nth-child(n+4){grid-column:span 1;aspect-ratio:4/3}.svc-card:last-child{grid-column:1/-1;aspect-ratio:16/8}.dr-grid{grid-template-columns:1fr 1fr}.ct{grid-template-columns:1fr}footer#footer .footer-main{grid-template-columns:1fr 1fr}.f-brand{grid-column:1/-1}}
+@media(max-width:600px){.svc-grid,.dr-grid{grid-template-columns:1fr}.rv-grid .rv-card{max-width:100%;flex-basis:100%}.svc-card,.svc-card:nth-child(n+4),.svc-card:last-child{grid-column:auto;aspect-ratio:16/10}.hero-full{min-height:78svh}.sec-head{display:block}footer#footer .footer-main{grid-template-columns:1fr}}
+
+/* Landing hero — the existing 3D EGE logo is the visual centerpiece. */
+.logo-hero{min-height:min(88svh,820px);align-items:center;justify-content:center;background:radial-gradient(circle at 50% 42%,#f8fafc 0%,#edf1f4 43%,#e2e7eb 100%);color:var(--e-ink);margin-top:10px;overflow:hidden}
+.logo-hero .hero-logo-stage{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.logo-hero .hero-logo-stage canvas{width:100%;height:100%;display:block}
+.logo-hero .hero-glow{position:absolute;z-index:0;width:min(58vw,720px);height:min(58vw,720px);border-radius:50%;background:radial-gradient(circle,rgba(200,16,46,.12),rgba(200,16,46,0) 68%);filter:blur(8px);animation:logoPulse 5s ease-in-out infinite}
+.logo-hero .hero-copy{position:absolute;z-index:3;left:0;right:0;bottom:clamp(42px,7vw,82px);padding:0 clamp(22px,5vw,70px);pointer-events:none}
+.logo-hero .eyebrow{color:#66717c;margin-bottom:14px;letter-spacing:.14em}.logo-hero .eyebrow span{background:var(--e-red)}
+.logo-hero h1{font-size:clamp(2.5rem,6.4vw,6rem);line-height:1;letter-spacing:-.055em;font-weight:700;margin:0 0 18px;color:#1f2933;max-width:9ch;text-shadow:0 2px 20px rgba(255,255,255,.8)}
+.logo-hero h1 em{font-style:normal;color:var(--e-red)}
+.logo-hero .hero-sub{font-size:clamp(1rem,1.55vw,1.28rem);line-height:1.5;max-width:520px;color:#46515d;margin:0}
+.logo-hero .hero-note{font-size:.84rem;color:#707b86;margin:14px 0 0;max-width:430px}
+.hero-line{width:72px;height:2px;background:var(--e-red);margin:20px 0 0}
+.logo-hero.logo-fallback .hero-logo-stage{display:none}
+@keyframes logoPulse{50%{transform:scale(1.08);opacity:.72}}
+@media(max-width:700px){.logo-hero{min-height:82svh}.logo-hero .hero-copy{bottom:30px}.logo-hero .hero-logo-stage{inset:-8% -18% 18%}.logo-hero .hero-glow{width:90vw;height:90vw}.logo-hero h1{font-size:clamp(2.35rem,12vw,4rem)}.logo-hero .hero-sub{max-width:340px}.logo-hero .hero-note{display:none}}
+@media(prefers-reduced-motion:reduce){.logo-hero .hero-glow{animation:none}}
+.hero-full.logo-hero .hero-media,.hero-full.logo-hero .hero-shade{display:none}
+
+/* Final landing integration: the 3D logo is part of the hero, not a separate card/video. */
+@media (min-width: 851px){
+  .logo-hero{
+    min-height:min(86svh,800px);
+    display:grid;
+    grid-template-columns:minmax(340px,.72fr) minmax(560px,1.28fr);
+    align-items:center;
+    padding:clamp(40px,5vw,68px) max(30px,calc((100vw - 1240px)/2));
+    gap:clamp(30px,4vw,68px);
+    background:
+      radial-gradient(circle at 76% 48%,rgba(200,16,46,.09),transparent 25%),
+      linear-gradient(135deg,#fbfcfd 0%,#f0f4f6 52%,#e7edf1 100%);
+  }
+  .logo-hero::before{
+    content:"";position:absolute;inset:22px;border:1px solid rgba(77,96,111,.10);
+    border-radius:28px;pointer-events:none;
+  }
+  .logo-hero .hero-copy{
+    position:relative;left:auto;right:auto;bottom:auto;
+    grid-column:1;grid-row:1;width:auto;max-width:520px;
+    padding:0;
+    border:0;background:transparent;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;
+    pointer-events:none;
+  }
+  .logo-hero .hero-logo-stage{
+    position:relative;inset:auto;grid-column:2;grid-row:1;
+    width:100%;height:clamp(500px,68vh,690px);min-width:0;
+    z-index:2;border-radius:0;overflow:visible;
+  }
+  .logo-hero .hero-logo-stage canvas{width:100%;height:100%;display:block;}
+  .logo-hero .hero-glow{
+    left:auto;right:2%;top:50%;transform:translateY(-50%);
+    width:min(48vw,650px);height:min(48vw,650px);
+  }
+  .logo-hero h1{
+    font-size:clamp(3.4rem,5.3vw,5.8rem);
+    line-height:.98;max-width:none;margin:0 0 24px;
+    letter-spacing:-.055em;
+  }
+  .logo-hero h1 span,.logo-hero h1 em{display:block;white-space:nowrap;}
+  .logo-hero .hero-sub{max-width:430px;}
+  .logo-hero .hero-note{max-width:430px;}
+}
+@media (max-width:850px){
+  .logo-hero .hero-copy{background:transparent;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0;}
+  .logo-hero h1 span,.logo-hero h1 em{display:block;}
+  .logo-hero .hero-logo-stage{border-radius:0;overflow:visible;}
+}
+/* 2026 landing refinement — keep content intact, improve spacing and hierarchy. */
+@media (min-width: 851px){
+  .logo-hero{
+    min-height:min(82svh,760px);
+    display:grid;
+    grid-template-columns:minmax(0, .9fr) minmax(520px, 1.1fr);
+    align-items:center;
+    padding:clamp(42px,6vw,76px) max(24px,calc((100vw - 1180px)/2));
+    gap:clamp(32px,5vw,76px);
+    background:
+      radial-gradient(circle at 78% 46%,rgba(200,16,46,.10),transparent 24%),
+      linear-gradient(135deg,#f9fbfc 0%,#eef3f6 52%,#e7edf1 100%);
+  }
+  .logo-hero::before{
+    content:"";
+    position:absolute;
+    inset:24px;
+    border:1px solid rgba(77,96,111,.10);
+    border-radius:30px;
+    pointer-events:none;
+  }
+  .logo-hero .hero-copy{
+    position:relative;
+    left:auto;right:auto;bottom:auto;
+    grid-column:1;
+    grid-row:1;
+    width:100%;
+    padding:clamp(28px,4vw,50px);
+    border-radius:26px;
+    background:rgba(255,255,255,.58);
+    border:1px solid rgba(255,255,255,.82);
+    box-shadow:0 22px 55px rgba(42,59,72,.08);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    pointer-events:none;
+  }
+  .logo-hero .hero-logo-stage{
+    position:relative;
+    inset:auto;
+    grid-column:2;
+    grid-row:1;
+    width:100%;
+    height:clamp(480px,61vh,640px);
+    min-width:0;
+    z-index:2;
+    border-radius:30px;
+    overflow:hidden;
+  }
+  .logo-hero .hero-glow{
+    left:auto;
+    right:4%;
+    top:50%;
+    transform:translateY(-50%);
+    width:min(46vw,620px);
+    height:min(46vw,620px);
+  }
+  .logo-hero h1{font-size:clamp(3rem,5.1vw,5.4rem);max-width:8ch;margin-bottom:20px}
+  .logo-hero .hero-sub{font-size:clamp(1rem,1.3vw,1.2rem);max-width:36ch}
+  .logo-hero .hero-note{max-width:36ch;line-height:1.65}
+}
+
+/* Small visual polish without changing copy or structure. */
+.flow-home .header{
+  border-radius:20px;
+  box-shadow:0 12px 34px rgba(35,52,65,.08);
+}
+.flow-home .header nav a{position:relative;transition:color .2s ease}
+.flow-home .header nav a::after{
+  content:"";position:absolute;left:50%;right:50%;bottom:-9px;height:2px;
+  background:#c8102e;border-radius:2px;transition:left .2s ease,right .2s ease;
+}
+.flow-home .header nav a:hover::after{left:0;right:0}
+.flow-home #home-content{background:linear-gradient(180deg,#f5f7f8 0%,#eef2f5 48%,#f7f9fa 100%)}
+.flow-home .lift-card:nth-child(n){transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.flow-home .lift-card:nth-child(n):hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(39,55,67,.11);border-color:#d8aeb6}
+.flow-home .service-choice{transition:background .22s ease,border-color .22s ease,transform .22s ease}
+.flow-home .service-choice:hover{transform:translateY(-2px);background:#fff}
+.flow-home .doctor-simple,.flow-home .faq-section,.flow-home .contact-section{position:relative}
+
+@media (max-width: 850px){
+  .logo-hero{
+    min-height:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    padding:28px 18px 34px;
+    gap:8px;
+  }
+  .logo-hero .hero-logo-stage{
+    position:relative;
+    inset:auto;
+    order:1;
+    height:min(52svh,430px);
+    width:100%;
+    border-radius:24px;
+    overflow:hidden;
+  }
+  .logo-hero .hero-copy{
+    position:relative;
+    left:auto;right:auto;bottom:auto;
+    order:2;
+    padding:24px 8px 2px;
+    width:100%;
+  }
+  .logo-hero .hero-glow{top:18%;left:50%;transform:translateX(-50%)}
+  .logo-hero h1{max-width:11ch}
+}
+
+/* Final landing pass — full visuals, no card/container treatment, no clipping. */
+@media (min-width: 851px){
+  .logo-hero{
+    grid-template-columns:minmax(360px,.82fr) minmax(560px,1.18fr);
+    gap:clamp(34px,4.5vw,72px);
+    padding-inline:max(28px,calc((100vw - 1240px)/2));
+    overflow:visible;
+  }
+  .logo-hero::before{display:none}
+  .logo-hero .hero-copy{
+    width:auto;
+    padding:0;
+    background:none;
+    border:0;
+    border-radius:0;
+    box-shadow:none;
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    pointer-events:none;
+  }
+  .logo-hero .hero-logo-stage{
+    height:min(68vh,680px);
+    min-height:520px;
+    border-radius:0;
+    overflow:visible;
+  }
+  .logo-hero .hero-logo-stage canvas{
+    width:100%;
+    height:100%;
+  }
+  .logo-hero h1{
+    max-width:none;
+    width:max-content;
+    max-width:100%;
+    font-size:clamp(3.1rem,5.2vw,5.6rem);
+    line-height:1.02;
+    text-wrap:balance;
+  }
+  .logo-hero .hero-sub,
+  .logo-hero .hero-note{max-width:44ch}
+}
+
+.logo-hero .hero-copy .eyebrow,
+.logo-hero .hero-copy h1,
+.logo-hero .hero-copy .hero-sub,
+.logo-hero .hero-copy .hero-note{overflow:visible}
+
+@media (max-width:850px){
+  .logo-hero{overflow:visible}
+  .logo-hero .hero-logo-stage{
+    height:min(58svh,500px);
+    min-height:360px;
+    border-radius:0;
+    overflow:visible;
+  }
+  .logo-hero .hero-copy{padding:20px 4px 4px}
+  .logo-hero h1{max-width:none;font-size:clamp(2.5rem,10.5vw,4rem);line-height:1.04}
+  .logo-hero .hero-sub,.logo-hero .hero-note{max-width:42ch}
+}
+
+.logo-hero a:focus-visible,
+.logo-hero button:focus-visible,
+.logo-hero [tabindex]:focus-visible{
+  outline:3px solid #c8102e;
+  outline-offset:4px;
+}
+
+@media(prefers-reduced-motion:reduce){
+  .logo-hero .hero-glow{animation:none}
+}
